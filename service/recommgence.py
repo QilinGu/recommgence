@@ -5,9 +5,10 @@ import os
 import tornado.web
 import tornado.httpserver
 from tornado.options import define, options
-# import torndb
-from service.handler.UserHandler import LoginHandler
-from service.modules.view import EntryModule
+import torndb
+
+from handler.UserHandler import LoginHandler
+from modules.view import EntryModule
 
 define("port", default=8889, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="recomm database host")
@@ -62,7 +63,7 @@ class HomeHandler(BaseHandler):
             viewname='王海飞',
             is_admin=True
         )
-        self.render("index.html", entry=user)
+        self.render("home.html", entry=user)
 
 
 class Application(tornado.web.Application):

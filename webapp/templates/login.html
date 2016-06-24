@@ -3,7 +3,7 @@
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	<meta charset="utf-8">
-	<title>Cloud Admin | Login</title>
+	<title>{{  escape(handler.settings["title"]) }} </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
 	<meta name="description" content="">
 	<meta name="author" content="">
@@ -18,7 +18,7 @@
 	<!-- ANIMATE -->
 	<link rel="stylesheet" type="text/css" href="static/css/animatecss/animate.min.css" />
 	<!-- FONTS -->
-	<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+	<!--<link href='http://fonts.useso.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>-->
 </head>
 <body class="login">	
 	<!-- PAGE -->
@@ -30,33 +30,30 @@
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4">
 							<div id="logo">
-								<a href="static/index.html"><img src="img/logo/logo-alt.png" height="40" alt="logo name" /></a>
+								<img src="static/img/logo/logo-alt.png" height="40" alt="logo name" />
 							</div>
 						</div>
 					</div>
 				</div>
-				<!--/NAV-BAR -->
 			</header>
-			<!--/HEADER -->
-			<!-- LOGIN -->
 			<section id="login" class="visible">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4">
 							<div class="login-box-plain">
-								<h2 class="bigintro">Sign In</h2>
+								<h2 class="bigintro">登陆</h2>
 								<div class="divide-40"></div>
 								<form role="form" method="post" action="/login">
 									{% raw xsrf_form_html() %}
 								  <div class="form-group">
-									<label for="exampleInputEmail1">输入用户名</label>
+									<label for="username">输入用户名</label>
 									<i class="fa fa-envelope"></i>
-									<input type="email" class="form-control" id="exampleInputEmail1" >
+									<input type="text" class="form-control" id="username" >
 								  </div>
 								  <div class="form-group"> 
-									<label for="exampleInputPassword1">输入密码</label>
+									<label for="passwrd">输入密码</label>
 									<i class="fa fa-lock"></i>
-									<input type="password" class="form-control" id="exampleInputPassword1" >
+									<input type="password" class="form-control" id="passwrd" >
 								  </div>
 
 								  <div class="form-actions">
@@ -65,29 +62,11 @@
 									<button type="submit" class="btn btn-danger">Submit</button>
 								  </div>
 								</form>
-								<!-- SOCIAL LOGIN -->
-								<!--<div class="divide-20"></div>-->
-								<!--<div class="center">-->
-									<!--<strong>Or login using your social account</strong>-->
-								<!--</div>-->
-								<!--<div class="divide-20"></div>-->
-								<!--<div class="social-login center">-->
-									<!--<a class="btn btn-primary btn-lg">-->
-										<!--<i class="fa fa-facebook"></i>-->
-									<!--</a>-->
-									<!--<a class="btn btn-info btn-lg">-->
-										<!--<i class="fa fa-twitter"></i>-->
-									<!--</a>-->
-									<!--<a class="btn btn-danger btn-lg">-->
-										<!--<i class="fa fa-google-plus"></i>-->
-									<!--</a>-->
-								<!--</div>-->
-								<!-- /SOCIAL LOGIN -->
-								<div class="login-helpers">
+								<!--<div class="login-helpers">
 									<a href="static/#" onclick="swapScreen('forgot');return false;">Forgot Password?</a> <br>
 									Don't have an account with us? <a href="static/#" onclick="swapScreen('register');return false;">Register
 										now!</a>
-								</div>
+								</div>-->
 							</div>
 						</div>
 					</div>
@@ -95,7 +74,7 @@
 			</section>
 			<!--/LOGIN -->
 			<!-- REGISTER -->
-			<section id="register">
+<!--			<section id="register">
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4 col-md-offset-4">
@@ -133,7 +112,7 @@
 									<button type="submit" class="btn btn-success">Sign Up</button>
 								  </div>
 								</form>
-								<!-- SOCIAL REGISTER -->
+								&lt;!&ndash; SOCIAL REGISTER &ndash;&gt;
 								<div class="divide-20"></div>
 								<div class="center">
 									<strong>Or register using your social account</strong>
@@ -150,7 +129,7 @@
 										<i class="fa fa-google-plus"></i>
 									</a>
 								</div>
-								<!-- /SOCIAL REGISTER -->
+								&lt;!&ndash; /SOCIAL REGISTER &ndash;&gt;
 								<div class="login-helpers">
 									<a href="static/#" onclick="swapScreen('login');return false;"> Back to Login</a> <br>
 								</div>
@@ -159,8 +138,8 @@
 					</div>
 				</div>
 			</section>
-			<!--/REGISTER -->
-			<!-- FORGOT PASSWORD -->
+			&lt;!&ndash;/REGISTER &ndash;&gt;
+			&lt;!&ndash; FORGOT PASSWORD &ndash;&gt;
 			<section id="forgot">
 				<div class="container">
 					<div class="row">
@@ -185,24 +164,24 @@
 						</div>
 					</div>
 				</div>
-			</section>
+			</section>-->
 			<!-- FORGOT PASSWORD -->
 	</section>
 	<!--/PAGE -->
 	<!-- JAVASCRIPTS -->
 	<!-- Placed at the end of the document so the pages load faster -->
 	<!-- JQUERY -->
-	<script src="js/jquery/jquery-2.0.3.min.js"></script>
+	<script src="static/js/jquery/jquery-2.0.3.min.js"></script>
 	<!-- JQUERY UI-->
-	<script src="js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
+	<script src="static/js/jquery-ui-1.10.3.custom/js/jquery-ui-1.10.3.custom.min.js"></script>
 	<!-- BOOTSTRAP -->
-	<script src="bootstrap-dist/js/bootstrap.min.js"></script>
+	<script src="static/bootstrap-dist/js/bootstrap.min.js"></script>
 	
 	
 	<!-- UNIFORM -->
-	<script type="text/javascript" src="js/uniform/jquery.uniform.min.js"></script>
+	<script type="text/javascript" src="static/js/uniform/jquery.uniform.min.js"></script>
 	<!-- CUSTOM SCRIPT -->
-	<script src="js/script.js"></script>
+	<script src="static/js/script.js"></script>
 	<script>
 		jQuery(document).ready(function() {		
 			App.setPage("login");  //Set current page
