@@ -7,7 +7,8 @@ import tornado.httpserver
 from tornado.options import define, options
 import torndb
 
-from handler.UserHandler import LoginHandler
+from handler.UserHandler import LoginHandler, LogoutHandler
+from handler.cache import CacheHandler
 from modules.view import EntryModule
 
 define("port", default=8889, help="run on the given port", type=int)
@@ -52,18 +53,24 @@ class IndexHandler(BaseHandler):
         self.render("login.html")
 
 
+
+
+
+
 class HomeHandler(BaseHandler):
 
     @tornado.web.authenticated
     def get(self):
-        user=dict(
+        user1=dict(
             id='1',
             name='wanghaifei',
             passwrd='124',
             viewname='王海飞',
             is_admin=True
         )
-        self.render("home.html", entry=user)
+        user=CacheHandler.get(self.get_secure_cookie("userid"))
+
+        self.render("home.html", user=user)
 
 
 class Application(tornado.web.Application):
@@ -71,6 +78,7 @@ class Application(tornado.web.Application):
         handlers = [
             (r"/", IndexHandler),
             (r"/login",LoginHandler),
+            (r"/logout",LogoutHandler),
             (r"/main",HomeHandler)
         ]
         settings = dict(
